@@ -30,6 +30,26 @@ public class ValidatorTest {
 
     @Test
     public void validPassword(){
-        assertTrue(validator.Validate("thisisagoodpassword"));
+        assertTrue(validator.Validate("Thisisagoodpassword123"));
+    }
+
+    @Test
+    public void allUpper(){
+        assertFalse(validator.Validate("AAAAAAAAA"));
+    }
+
+    @Test
+    public void allLower(){
+        assertFalse(validator.Validate("aaaaaaaaaaaaaa"));
+    }
+
+    @Test
+    public void noNumbers(){
+        assertFalse(validator.Validate("ThisShouldHaveNumbers"));
+    }
+
+    @Test
+    public void tooLong(){
+        assertFalse(validator.Validate("ThisHasWayTooManyCharactersForItToBeAUsablePassword4000"));
     }
 }
