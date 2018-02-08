@@ -29,6 +29,10 @@ public class ValidatorTest {
     }
 
     @Test
+    public void tooShort(){
+        assertFalse(validator.Validate("Short1"));
+    }
+    @Test
     public void validPassword(){
         assertTrue(validator.Validate("Thisisagoodpassword123"));
     }
